@@ -1,0 +1,162 @@
+{
+  "scene_id": "scene_railway_station_j_fob_closure_19842",
+  "venue_id": "railway_station",
+  "junction_id": "j_fob",
+  "heading": 180,
+  "entries": [
+    {
+      "dest_id": "d_ticket",
+      "label": {
+        "en": "Ticket Counter",
+        "hi": null,
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 0,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_waiting",
+      "label": {
+        "en": "Waiting Hall",
+        "hi": null,
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 0,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_p6",
+      "label": {
+        "en": "Platform 6",
+        "hi": null,
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 270,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_lift",
+      "label": {
+        "en": "Lift",
+        "hi": null,
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 0,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_p4",
+      "label": {
+        "en": "Platform 4",
+        "hi": null,
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 225,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_exit",
+      "label": {
+        "en": "Main Exit",
+        "hi": null,
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 0,
+      "status": "closed",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_p3",
+      "label": {
+        "en": "Platform 3",
+        "hi": null,
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 180,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_p1",
+      "label": {
+        "en": "Platform 1",
+        "hi": null,
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 90,
+      "status": "open",
+      "source": "permanent"
+    }
+  ],
+  "distractors": [
+    {
+      "id": "distractor_1",
+      "kind": "icon",
+      "content": "no_smoking",
+      "position": [
+        0.08,
+        0.04
+      ]
+    },
+    {
+      "id": "distractor_2",
+      "kind": "text",
+      "content": "Beware of pickpockets",
+      "position": [
+        0.92,
+        0.04
+      ]
+    },
+    {
+      "id": "distractor_3",
+      "kind": "number",
+      "content": "Zone 4B",
+      "position": [
+        0.44,
+        0.04
+      ]
+    },
+    {
+      "id": "distractor_4",
+      "kind": "number",
+      "content": "Helpline: 139",
+      "position": [
+        0.2,
+        0.04
+      ]
+    }
+  ],
+  "knobs": {
+    "n_entries": 8,
+    "scripts": [
+      "en"
+    ],
+    "perspective_deg": 19.78,
+    "blur": 2.39,
+    "noise": 0.0531,
+    "lighting": 0.14,
+    "clutter": 4,
+    "occlusion": 0.045,
+    "jpeg_quality": 68,
+    "template": "board_list"
+  },
+  "closed_edges": [
+    [
+      "j_exit_hall",
+      "d_exit"
+    ]
+  ]
+}

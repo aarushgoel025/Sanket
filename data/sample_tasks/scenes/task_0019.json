@@ -1,0 +1,176 @@
+{
+  "scene_id": "scene_hospital_j_north_wing_binding_17879",
+  "venue_id": "hospital",
+  "junction_id": "j_north_wing",
+  "heading": 315,
+  "entries": [
+    {
+      "dest_id": "d_lift",
+      "label": {
+        "en": "Lift",
+        "hi": "लिफ्ट",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 180,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_radiology",
+      "label": {
+        "en": "Radiology",
+        "hi": "रेडियोलॉजी",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 45,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_reception",
+      "label": {
+        "en": "Reception",
+        "hi": "स्वागत कक्ष",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 225,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_lab",
+      "label": {
+        "en": "Pathology Lab",
+        "hi": "जांच प्रयोगशाला",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 0,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_exit",
+      "label": {
+        "en": "Main Exit",
+        "hi": "निकास",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 225,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_pharmacy",
+      "label": {
+        "en": "Pharmacy",
+        "hi": "दवाखाना",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 225,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_canteen",
+      "label": {
+        "en": "Canteen",
+        "hi": "कैंटीन",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 180,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_emergency",
+      "label": {
+        "en": "Emergency",
+        "hi": "आपातकालीन",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 270,
+      "status": "open",
+      "source": "permanent"
+    }
+  ],
+  "distractors": [
+    {
+      "id": "distractor_1",
+      "kind": "ad",
+      "content": "Kashi Souvenirs & Book Depot",
+      "position": [
+        0.1,
+        0.92
+      ]
+    },
+    {
+      "id": "distractor_2",
+      "kind": "icon",
+      "content": "fire_extinguisher",
+      "position": [
+        0.35,
+        0.92
+      ]
+    },
+    {
+      "id": "distractor_3",
+      "kind": "text",
+      "content": "Queue here",
+      "position": [
+        0.84,
+        0.92
+      ]
+    },
+    {
+      "id": "distractor_4",
+      "kind": "text",
+      "content": "Keep premises clean",
+      "position": [
+        0.6,
+        0.92
+      ]
+    },
+    {
+      "id": "distractor_5",
+      "kind": "number",
+      "content": "Emergency: 112",
+      "position": [
+        0.94,
+        0.92
+      ]
+    },
+    {
+      "id": "distractor_6",
+      "kind": "text",
+      "content": "Beware of pickpockets",
+      "position": [
+        0.48,
+        0.92
+      ]
+    }
+  ],
+  "knobs": {
+    "n_entries": 8,
+    "scripts": [
+      "en",
+      "hi"
+    ],
+    "perspective_deg": 22.6,
+    "blur": 2.01,
+    "noise": 0.0061,
+    "lighting": 0.02,
+    "clutter": 6,
+    "occlusion": 0.127,
+    "jpeg_quality": 62,
+    "template": "board_gantry"
+  },
+  "closed_edges": []
+}

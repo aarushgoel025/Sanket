@@ -1,0 +1,18 @@
+models:
+  - name: gemini_flash
+    adapter: gemini
+    model_id: REPLACE_WITH_MODEL_ID
+    rpm: 10
+    enabled: true
+  - name: or_vision
+    adapter: openai_compat
+    base_url: "https://openrouter.ai/api/v1"
+    model_id: REPLACE_WITH_MODEL_ID
+    rpm: 10
+    enabled: true
+  - name: qwen_vl
+    adapter: hf_qwen
+    model_id: REPLACE_WITH_MODEL_ID
+    rpm: 10
+    enabled: false
+blind_model: gemini_flash

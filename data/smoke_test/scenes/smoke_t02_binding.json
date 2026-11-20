@@ -1,0 +1,74 @@
+{
+  "scene_id": "scene_railway_station_j_fob_binding_75665",
+  "venue_id": "railway_station",
+  "junction_id": "j_fob",
+  "heading": 135,
+  "entries": [
+    {
+      "dest_id": "d_p6",
+      "label": {
+        "en": "Platform 6",
+        "hi": "प्लेटफ़ॉर्म 6",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 315,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_p3",
+      "label": {
+        "en": "Platform 3",
+        "hi": "प्लेटफ़ॉर्म 3",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 225,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_p1",
+      "label": {
+        "en": "Platform 1",
+        "hi": "प्लेटफ़ॉर्म 1",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 135,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_p5",
+      "label": {
+        "en": "Platform 5",
+        "hi": "प्लेटफ़ॉर्म 5",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 315,
+      "status": "open",
+      "source": "permanent"
+    }
+  ],
+  "distractors": [],
+  "knobs": {
+    "n_entries": 4,
+    "scripts": [
+      "en",
+      "hi",
+      "regional"
+    ],
+    "perspective_deg": 8.92,
+    "blur": 0.26,
+    "noise": 0.0069,
+    "lighting": 0.2,
+    "clutter": 0,
+    "occlusion": 0.146,
+    "jpeg_quality": 94,
+    "template": "board_grid"
+  },
+  "closed_edges": []
+}

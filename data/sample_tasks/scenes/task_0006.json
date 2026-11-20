@@ -1,0 +1,152 @@
+{
+  "scene_id": "scene_railway_station_j_concourse_direct_61472",
+  "venue_id": "railway_station",
+  "junction_id": "j_concourse",
+  "heading": 270,
+  "entries": [
+    {
+      "dest_id": "d_p3",
+      "label": {
+        "en": "Platform 3",
+        "hi": "प्लेटफ़ॉर्म 3",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 90,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_p2",
+      "label": {
+        "en": "Platform 2",
+        "hi": "प्लेटफ़ॉर्म 2",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 90,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_p6",
+      "label": {
+        "en": "Platform 6",
+        "hi": "प्लेटफ़ॉर्म 6",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 180,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_toilets",
+      "label": {
+        "en": "Toilets",
+        "hi": "शौचालय",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 315,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_exit",
+      "label": {
+        "en": "Main Exit",
+        "hi": "निकास",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 180,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_p1",
+      "label": {
+        "en": "Platform 1",
+        "hi": "प्लेटफ़ॉर्म 1",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 90,
+      "status": "open",
+      "source": "permanent"
+    }
+  ],
+  "distractors": [
+    {
+      "id": "distractor_1",
+      "kind": "ad",
+      "content": "Express Luggage Cloakroom",
+      "position": [
+        0.68,
+        0.04
+      ]
+    },
+    {
+      "id": "distractor_2",
+      "kind": "icon",
+      "content": "first_aid",
+      "position": [
+        0.44,
+        0.04
+      ]
+    },
+    {
+      "id": "distractor_3",
+      "kind": "number",
+      "content": "Terminal 2",
+      "position": [
+        0.92,
+        0.04
+      ]
+    },
+    {
+      "id": "distractor_4",
+      "kind": "text",
+      "content": "Mind the gap",
+      "position": [
+        0.08,
+        0.04
+      ]
+    },
+    {
+      "id": "distractor_5",
+      "kind": "ad",
+      "content": "Sanket Water - 100% Pure & Safe",
+      "position": [
+        0.2,
+        0.04
+      ]
+    },
+    {
+      "id": "distractor_6",
+      "kind": "text",
+      "content": "Beware of pickpockets",
+      "position": [
+        0.56,
+        0.04
+      ]
+    }
+  ],
+  "knobs": {
+    "n_entries": 6,
+    "scripts": [
+      "en",
+      "hi"
+    ],
+    "perspective_deg": 23.38,
+    "blur": 0.21,
+    "noise": 0.0096,
+    "lighting": 0.08,
+    "clutter": 6,
+    "occlusion": 0.093,
+    "jpeg_quality": 86,
+    "template": "board_list"
+  },
+  "closed_edges": []
+}

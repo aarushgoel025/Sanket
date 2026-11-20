@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="currentColor">
+  <!-- Ticket outline with notch -->
+  <path d="M6 14c0-2.2 1.8-4 4-4h28c2.2 0 4 1.8 4 4v5c-2.8 0-5 2.2-5 5s2.2 5 5 5v5c0 2.2-1.8 4-4 4h-28c-2.2 0-4-1.8-4-4v-5c2.8 0 5-2.2 5-5s-2.2-5-5-5v-5z" fill="none" stroke="currentColor" stroke-width="3"/>
+  <!-- Star or symbol inside -->
+  <circle cx="24" cy="24" r="5" fill="currentColor"/>
+  <line x1="16" y1="18" x2="16" y2="30" stroke="currentColor" stroke-width="2" stroke-dasharray="2,2"/>
+</svg>

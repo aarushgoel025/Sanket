@@ -1,0 +1,20 @@
+# Real-world impact and consequences for signboard wayfinding failures
+consequences:
+  DIRECT:
+    summary: "Missed turn or wrong corridor"
+    impact: "Passenger heads down wrong concourse or wing, leading to missed connection or delayed appointment."
+  BINDING:
+    summary: "Misbound destination to adjacent arrow"
+    impact: "Follows arrow intended for neighboring destination or platform; boards incorrect service or enters wrong clinic."
+  CLOSURE:
+    summary: "Ignored closed or blocked corridor overlay"
+    impact: "Proceeds down obstructed or barricaded passageway, encountering locked barrier with baggage/wheelchair."
+  OVERRIDE:
+    summary: "Ignored temporary notice detour"
+    impact: "Misses urgent paper notice rerouting around maintenance work; enters active construction zone."
+  EGOCENTRIC:
+    summary: "Failed mental rotation / body-frame confusion"
+    impact: "Disorients viewer frame relative to sign direction; walks 180° away from intended facility."
+  ABSENT:
+    summary: "Hallucinated direction for unlisted destination"
+    impact: "Model fabricates confidence on unlisted service; passenger wanders in transit hub without assistance."

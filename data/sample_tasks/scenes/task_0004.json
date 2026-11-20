@@ -1,0 +1,76 @@
+{
+  "scene_id": "scene_railway_station_j_exit_hall_egocentric_69416",
+  "venue_id": "railway_station",
+  "junction_id": "j_exit_hall",
+  "heading": 180,
+  "entries": [
+    {
+      "dest_id": "d_p1",
+      "label": {
+        "en": "Platform 1",
+        "hi": null,
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 90,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_p4",
+      "label": {
+        "en": "Platform 4",
+        "hi": null,
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 90,
+      "status": "open",
+      "source": "permanent"
+    }
+  ],
+  "distractors": [
+    {
+      "id": "distractor_1",
+      "kind": "text",
+      "content": "Beware of pickpockets",
+      "position": [
+        0.6,
+        0.92
+      ]
+    },
+    {
+      "id": "distractor_2",
+      "kind": "text",
+      "content": "Do not lean against glass",
+      "position": [
+        0.84,
+        0.92
+      ]
+    },
+    {
+      "id": "distractor_3",
+      "kind": "icon",
+      "content": "drinking_water",
+      "position": [
+        0.94,
+        0.92
+      ]
+    }
+  ],
+  "knobs": {
+    "n_entries": 2,
+    "scripts": [
+      "en"
+    ],
+    "perspective_deg": 12.29,
+    "blur": 0.99,
+    "noise": 0.0589,
+    "lighting": 0.2,
+    "clutter": 3,
+    "occlusion": 0.037,
+    "jpeg_quality": 75,
+    "template": "board_gantry"
+  },
+  "closed_edges": []
+}

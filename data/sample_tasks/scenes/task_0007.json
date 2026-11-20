@@ -1,0 +1,147 @@
+{
+  "scene_id": "scene_hospital_j_corridor_east_binding_89616",
+  "venue_id": "hospital",
+  "junction_id": "j_corridor_east",
+  "heading": 45,
+  "entries": [
+    {
+      "dest_id": "d_radiology",
+      "label": {
+        "en": "Radiology",
+        "hi": "रेडियोलॉजी",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 270,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_emergency",
+      "label": {
+        "en": "Emergency",
+        "hi": "आपातकालीन",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 225,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_lift",
+      "label": {
+        "en": "Lift",
+        "hi": "लिफ्ट",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 0,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_exit",
+      "label": {
+        "en": "Main Exit",
+        "hi": "निकास",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 225,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_lab",
+      "label": {
+        "en": "Pathology Lab",
+        "hi": "जांच प्रयोगशाला",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 270,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_reception",
+      "label": {
+        "en": "Reception",
+        "hi": "स्वागत कक्ष",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 225,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_opd",
+      "label": {
+        "en": "OPD",
+        "hi": "बाह्य रोगी विभाग",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 225,
+      "status": "open",
+      "source": "permanent"
+    }
+  ],
+  "distractors": [
+    {
+      "id": "distractor_1",
+      "kind": "text",
+      "content": "Keep premises clean",
+      "position": [
+        0.92,
+        0.04
+      ]
+    },
+    {
+      "id": "distractor_2",
+      "kind": "number",
+      "content": "Pillar 14",
+      "position": [
+        0.2,
+        0.04
+      ]
+    },
+    {
+      "id": "distractor_3",
+      "kind": "icon",
+      "content": "fire_extinguisher",
+      "position": [
+        0.8,
+        0.04
+      ]
+    },
+    {
+      "id": "distractor_4",
+      "kind": "number",
+      "content": "Bay 07",
+      "position": [
+        0.68,
+        0.04
+      ]
+    }
+  ],
+  "knobs": {
+    "n_entries": 7,
+    "scripts": [
+      "en",
+      "hi",
+      "regional"
+    ],
+    "perspective_deg": 22.61,
+    "blur": 0.96,
+    "noise": 0.0027,
+    "lighting": 0.28,
+    "clutter": 4,
+    "occlusion": 0.064,
+    "jpeg_quality": 65,
+    "template": "board_grid"
+  },
+  "closed_edges": []
+}

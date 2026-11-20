@@ -1,0 +1,15 @@
+master_seed: 1234
+total_tasks: 500
+keep_tasks: 400
+blind_threshold: 0.67
+blind_samples: 3
+pair_fraction: 0.3
+prompt_version: "v1"
+
+quotas:
+  DIRECT: 83
+  BINDING: 83
+  CLOSURE: 83
+  OVERRIDE: 83
+  EGOCENTRIC: 83
+  ABSENT: 83

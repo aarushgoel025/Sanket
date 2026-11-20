@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sanket"
+version = "0.1.0"
+description = "Verified visual benchmark factory for wayfinding signs"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic",
+    "pyyaml",
+    "networkx",
+    "jinja2",
+    "playwright",
+    "pillow",
+    "opencv-python-headless",
+    "albumentations",
+    "numpy",
+    "pandas",
+    "matplotlib",
+    "seaborn",
+    "streamlit",
+    "pytest",
+    "ruff",
+    "tenacity",
+    "httpx",
+    "python-dotenv",
+    "typer",
+    "imagehash",
+    "google-genai",
+]
+
+[project.scripts]
+sanket = "sanket.cli:app"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+norecursedirs = [".venv", "data", "reports", "assets", ".git", ".pytest_cache", ".ruff_cache"]

@@ -1,0 +1,67 @@
+{
+  "scene_id": "scene_railway_station_j_concourse_override_78424",
+  "venue_id": "railway_station",
+  "junction_id": "j_concourse",
+  "heading": 135,
+  "entries": [
+    {
+      "dest_id": "d_lift",
+      "label": {
+        "en": "Lift",
+        "hi": "लिफ्ट",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 180,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_p2",
+      "label": {
+        "en": "Platform 2",
+        "hi": "प्लेटफ़ॉर्म 2",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 225,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_p2",
+      "label": {
+        "en": "Platform 2",
+        "hi": "प्लेटफ़ॉर्म 2",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 315,
+      "status": "open",
+      "source": "temporary_notice"
+    }
+  ],
+  "distractors": [],
+  "knobs": {
+    "n_entries": 2,
+    "scripts": [
+      "en",
+      "hi",
+      "regional"
+    ],
+    "perspective_deg": 21.57,
+    "blur": 0.4,
+    "noise": 0.0177,
+    "lighting": 0.07,
+    "clutter": 0,
+    "occlusion": 0.096,
+    "jpeg_quality": 76,
+    "template": "board_list"
+  },
+  "closed_edges": [
+    [
+      "j_concourse",
+      "j_fob"
+    ]
+  ]
+}

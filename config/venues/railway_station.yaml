@@ -1,0 +1,203 @@
+id: railway_station
+name: "Central Junction Station"
+kind: railway
+
+nodes:
+  # Junctions (at least 4)
+  - id: j_concourse
+    kind: junction
+    label:
+      en: "Main Concourse"
+      hi: "मुख्य कॉनकोर्स" # VERIFY HINDI
+
+  - id: j_fob
+    kind: junction
+    label:
+      en: "Foot Over Bridge"
+      hi: "उपरी पैदल पुल" # VERIFY HINDI
+
+  - id: j_platform_end
+    kind: junction
+    label:
+      en: "Platform End Hall"
+      hi: "प्लेटफ़ॉर्म छोर हॉल" # VERIFY HINDI
+
+  - id: j_exit_hall
+    kind: junction
+    label:
+      en: "Exit Hall"
+      hi: "निकास हॉल" # VERIFY HINDI
+
+  # Destinations (at least 10)
+  - id: d_p1
+    kind: destination
+    category: platform
+    label:
+      en: "Platform 1"
+      hi: "प्लेटफ़ॉर्म 1"
+
+  - id: d_p2
+    kind: destination
+    category: platform
+    label:
+      en: "Platform 2"
+      hi: "प्लेटफ़ॉर्म 2"
+
+  - id: d_p3
+    kind: destination
+    category: platform
+    label:
+      en: "Platform 3"
+      hi: "प्लेटफ़ॉर्म 3"
+
+  - id: d_p4
+    kind: destination
+    category: platform
+    label:
+      en: "Platform 4"
+      hi: "प्लेटफ़ॉर्म 4"
+
+  - id: d_p5
+    kind: destination
+    category: platform
+    label:
+      en: "Platform 5"
+      hi: "प्लेटफ़ॉर्म 5"
+
+  - id: d_p6
+    kind: destination
+    category: platform
+    label:
+      en: "Platform 6"
+      hi: "प्लेटफ़ॉर्म 6"
+
+  - id: d_exit
+    kind: destination
+    category: exit
+    label:
+      en: "Main Exit"
+      hi: "निकास"
+
+  - id: d_ticket
+    kind: destination
+    category: service
+    label:
+      en: "Ticket Counter"
+      hi: "टिकट खिड़की"
+
+  - id: d_toilets
+    kind: destination
+    category: amenity
+    label:
+      en: "Toilets"
+      hi: "शौचालय"
+
+  - id: d_lift
+    kind: destination
+    category: accessibility
+    label:
+      en: "Lift"
+      hi: "लिफ्ट"
+
+  - id: d_waiting
+    kind: destination
+    category: amenity
+    label:
+      en: "Waiting Hall"
+      hi: "प्रतीक्षालय" # VERIFY HINDI
+
+edges:
+  # Inter-junction circulation loop (enables OVERRIDE tasks)
+  - a: j_concourse
+    b: j_exit_hall
+    bearing_ab: 90
+    length: 40.0
+    status: open
+
+  - a: j_exit_hall
+    b: j_platform_end
+    bearing_ab: 0
+    length: 50.0
+    status: open
+
+  - a: j_fob
+    b: j_platform_end
+    bearing_ab: 90
+    length: 70.0
+    status: open
+
+  - a: j_concourse
+    b: j_fob
+    bearing_ab: 0
+    length: 60.0
+    status: open
+
+  # Concourse spurs (ticket and waiting are single-route spurs for CLOSURE tasks)
+  - a: j_concourse
+    b: d_ticket
+    bearing_ab: 180
+    length: 15.0
+    status: open
+
+  - a: j_concourse
+    b: d_waiting
+    bearing_ab: 270
+    length: 25.0
+    status: open
+
+  - a: j_concourse
+    b: d_toilets
+    bearing_ab: 225
+    length: 20.0
+    status: open
+
+  - a: j_concourse
+    b: d_lift
+    bearing_ab: 315
+    length: 18.0
+    status: open
+
+  # Exit hall spur
+  - a: j_exit_hall
+    b: d_exit
+    bearing_ab: 135
+    length: 20.0
+    status: open
+
+  # Foot over bridge platform spurs
+  - a: j_fob
+    b: d_p1
+    bearing_ab: 270
+    length: 30.0
+    status: open
+
+  - a: j_fob
+    b: d_p2
+    bearing_ab: 315
+    length: 35.0
+    status: open
+
+  - a: j_fob
+    b: d_p3
+    bearing_ab: 0
+    length: 40.0
+    status: open
+
+  - a: j_fob
+    b: d_p4
+    bearing_ab: 45
+    length: 45.0
+    status: open
+
+  # Platform end spurs
+  - a: j_platform_end
+    b: d_p5
+    bearing_ab: 0
+    length: 25.0
+    status: open
+
+  - a: j_platform_end
+    b: d_p6
+    bearing_ab: 90
+    length: 30.0
+    status: open

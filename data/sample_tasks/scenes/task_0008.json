@@ -1,0 +1,104 @@
+{
+  "scene_id": "scene_railway_station_j_fob_closure_92075",
+  "venue_id": "railway_station",
+  "junction_id": "j_fob",
+  "heading": 0,
+  "entries": [
+    {
+      "dest_id": "d_ticket",
+      "label": {
+        "en": "Ticket Counter",
+        "hi": "टिकट खिड़की",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 180,
+      "status": "closed",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_waiting",
+      "label": {
+        "en": "Waiting Hall",
+        "hi": "प्रतीक्षालय",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 180,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_toilets",
+      "label": {
+        "en": "Toilets",
+        "hi": "शौचालय",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 180,
+      "status": "open",
+      "source": "permanent"
+    }
+  ],
+  "distractors": [
+    {
+      "id": "distractor_1",
+      "kind": "ad",
+      "content": "Express Luggage Cloakroom",
+      "position": [
+        0.68,
+        0.04
+      ]
+    },
+    {
+      "id": "distractor_2",
+      "kind": "text",
+      "content": "Silence zone",
+      "position": [
+        0.32,
+        0.04
+      ]
+    },
+    {
+      "id": "distractor_3",
+      "kind": "ad",
+      "content": "Metro Cafe - Fresh Coffee & Tea",
+      "position": [
+        0.8,
+        0.04
+      ]
+    },
+    {
+      "id": "distractor_4",
+      "kind": "ad",
+      "content": "Kashi Souvenirs & Book Depot",
+      "position": [
+        0.44,
+        0.04
+      ]
+    }
+  ],
+  "knobs": {
+    "n_entries": 3,
+    "scripts": [
+      "en",
+      "hi",
+      "regional"
+    ],
+    "perspective_deg": 9.61,
+    "blur": 0.69,
+    "noise": 0.0267,
+    "lighting": 0.25,
+    "clutter": 4,
+    "occlusion": 0.001,
+    "jpeg_quality": 78,
+    "template": "board_list"
+  },
+  "closed_edges": [
+    [
+      "j_concourse",
+      "d_ticket"
+    ]
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "scene_id": "scene_railway_station_j_exit_hall_direct_14914",
+  "venue_id": "railway_station",
+  "junction_id": "j_exit_hall",
+  "heading": 90,
+  "entries": [
+    {
+      "dest_id": "d_p2",
+      "label": {
+        "en": "Platform 2",
+        "hi": null,
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 180,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_exit",
+      "label": {
+        "en": "Main Exit",
+        "hi": null,
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 90,
+      "status": "open",
+      "source": "permanent"
+    }
+  ],
+  "distractors": [
+    {
+      "id": "distractor_1",
+      "kind": "text",
+      "content": "Luggage inspection mandatory",
+      "position": [
+        0.2,
+        0.04
+      ]
+    },
+    {
+      "id": "distractor_2",
+      "kind": "number",
+      "content": "Emergency: 112",
+      "position": [
+        0.92,
+        0.04
+      ]
+    }
+  ],
+  "knobs": {
+    "n_entries": 2,
+    "scripts": [
+      "en"
+    ],
+    "perspective_deg": 24.56,
+    "blur": 0.25,
+    "noise": 0.0364,
+    "lighting": 0.16,
+    "clutter": 2,
+    "occlusion": 0.134,
+    "jpeg_quality": 76,
+    "template": "board_list"
+  },
+  "closed_edges": []
+}

@@ -1,0 +1,72 @@
+{
+  "scene_id": "scene_railway_station_j_fob_direct_21622",
+  "venue_id": "railway_station",
+  "junction_id": "j_fob",
+  "heading": 225,
+  "entries": [
+    {
+      "dest_id": "d_waiting",
+      "label": {
+        "en": "Waiting Hall",
+        "hi": "प्रतीक्षालय",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 315,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_lift",
+      "label": {
+        "en": "Lift",
+        "hi": "लिफ्ट",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 315,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_p1",
+      "label": {
+        "en": "Platform 1",
+        "hi": "प्लेटफ़ॉर्म 1",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 45,
+      "status": "open",
+      "source": "permanent"
+    }
+  ],
+  "distractors": [
+    {
+      "id": "distractor_1",
+      "kind": "text",
+      "content": "Do not lean against glass",
+      "position": [
+        0.68,
+        0.04
+      ]
+    }
+  ],
+  "knobs": {
+    "n_entries": 3,
+    "scripts": [
+      "en",
+      "hi",
+      "regional"
+    ],
+    "perspective_deg": 4.66,
+    "blur": 2.01,
+    "noise": 0.0549,
+    "lighting": 0.04,
+    "clutter": 1,
+    "occlusion": 0.053,
+    "jpeg_quality": 95,
+    "template": "board_list"
+  },
+  "closed_edges": []
+}

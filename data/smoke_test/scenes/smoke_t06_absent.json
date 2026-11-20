@@ -1,0 +1,60 @@
+{
+  "scene_id": "scene_railway_station_j_concourse_absent_51597",
+  "venue_id": "railway_station",
+  "junction_id": "j_concourse",
+  "heading": 225,
+  "entries": [
+    {
+      "dest_id": "d_ticket",
+      "label": {
+        "en": "Ticket Counter",
+        "hi": "टिकट खिड़की",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 315,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_exit",
+      "label": {
+        "en": "Main Exit",
+        "hi": "निकास",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 225,
+      "status": "open",
+      "source": "permanent"
+    }
+  ],
+  "distractors": [
+    {
+      "id": "distractor_1",
+      "kind": "ad",
+      "content": "Kashi Souvenirs & Book Depot",
+      "position": [
+        0.44,
+        0.04
+      ]
+    }
+  ],
+  "knobs": {
+    "n_entries": 2,
+    "scripts": [
+      "en",
+      "hi",
+      "regional"
+    ],
+    "perspective_deg": 17.82,
+    "blur": 1.85,
+    "noise": 0.0036,
+    "lighting": 0.28,
+    "clutter": 1,
+    "occlusion": 0.011,
+    "jpeg_quality": 76,
+    "template": "board_list"
+  },
+  "closed_edges": []
+}

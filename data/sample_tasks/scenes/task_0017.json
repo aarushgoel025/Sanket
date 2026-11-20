@@ -1,0 +1,126 @@
+{
+  "scene_id": "scene_hospital_j_corridor_east_absent_11748",
+  "venue_id": "hospital",
+  "junction_id": "j_corridor_east",
+  "heading": 45,
+  "entries": [
+    {
+      "dest_id": "d_pharmacy",
+      "label": {
+        "en": "Pharmacy",
+        "hi": "दवाखाना",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 225,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_canteen",
+      "label": {
+        "en": "Canteen",
+        "hi": "कैंटीन",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 45,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_lift",
+      "label": {
+        "en": "Lift",
+        "hi": "लिफ्ट",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 0,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_opd",
+      "label": {
+        "en": "OPD",
+        "hi": "बाह्य रोगी विभाग",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 225,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_emergency",
+      "label": {
+        "en": "Emergency",
+        "hi": "आपातकालीन",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 225,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_exit",
+      "label": {
+        "en": "Main Exit",
+        "hi": "निकास",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 225,
+      "status": "open",
+      "source": "permanent"
+    }
+  ],
+  "distractors": [
+    {
+      "id": "distractor_1",
+      "kind": "text",
+      "content": "Luggage inspection mandatory",
+      "position": [
+        0.92,
+        0.04
+      ]
+    },
+    {
+      "id": "distractor_2",
+      "kind": "ad",
+      "content": "Express Luggage Cloakroom",
+      "position": [
+        0.32,
+        0.04
+      ]
+    },
+    {
+      "id": "distractor_3",
+      "kind": "number",
+      "content": "Sign ID: #402",
+      "position": [
+        0.44,
+        0.04
+      ]
+    }
+  ],
+  "knobs": {
+    "n_entries": 6,
+    "scripts": [
+      "en",
+      "hi",
+      "regional"
+    ],
+    "perspective_deg": 10.19,
+    "blur": 1.11,
+    "noise": 0.0107,
+    "lighting": 0.4,
+    "clutter": 3,
+    "occlusion": 0.08,
+    "jpeg_quality": 89,
+    "template": "board_list"
+  },
+  "closed_edges": []
+}

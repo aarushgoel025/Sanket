@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="currentColor">
+  <!-- Male figure -->
+  <circle cx="16" cy="10" r="3.5" fill="currentColor"/>
+  <path d="M12 16h8c1.1 0 2 .9 2 2v9h-3v13h-4v-13h-3v-9c0-1.1.9-2 2-2z" fill="currentColor"/>
+  <!-- Female figure -->
+  <circle cx="32" cy="10" r="3.5" fill="currentColor"/>
+  <path d="M28 16h8c1.1 0 2 .9 2 2l2 10h-3l2 12h-4l-2-10-2 10h-4l2-12h-3l2-10c0-1.1.9-2 2-2z" fill="currentColor"/>
+</svg>

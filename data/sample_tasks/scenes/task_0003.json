@@ -1,0 +1,158 @@
+{
+  "scene_id": "scene_hospital_j_north_wing_override_10693",
+  "venue_id": "hospital",
+  "junction_id": "j_north_wing",
+  "heading": 270,
+  "entries": [
+    {
+      "dest_id": "d_canteen",
+      "label": {
+        "en": "Canteen",
+        "hi": "कैंटीन",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 225,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_pharmacy",
+      "label": {
+        "en": "Pharmacy",
+        "hi": "दवाखाना",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 315,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_reception",
+      "label": {
+        "en": "Reception",
+        "hi": "स्वागत कक्ष",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 315,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_radiology",
+      "label": {
+        "en": "Radiology",
+        "hi": "रेडियोलॉजी",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 90,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_exit",
+      "label": {
+        "en": "Main Exit",
+        "hi": "निकास",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 270,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_exit",
+      "label": {
+        "en": "Main Exit",
+        "hi": "निकास",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 315,
+      "status": "open",
+      "source": "temporary_notice"
+    }
+  ],
+  "distractors": [
+    {
+      "id": "distractor_1",
+      "kind": "ad",
+      "content": "Kashi Souvenirs & Book Depot",
+      "position": [
+        0.32,
+        0.04
+      ]
+    },
+    {
+      "id": "distractor_2",
+      "kind": "icon",
+      "content": "wifi",
+      "position": [
+        0.68,
+        0.04
+      ]
+    },
+    {
+      "id": "distractor_3",
+      "kind": "ad",
+      "content": "City Health Checkup - 20% Off",
+      "position": [
+        0.56,
+        0.04
+      ]
+    },
+    {
+      "id": "distractor_4",
+      "kind": "text",
+      "content": "Silence zone",
+      "position": [
+        0.2,
+        0.04
+      ]
+    },
+    {
+      "id": "distractor_5",
+      "kind": "ad",
+      "content": "Metro Cafe - Fresh Coffee & Tea",
+      "position": [
+        0.92,
+        0.04
+      ]
+    },
+    {
+      "id": "distractor_6",
+      "kind": "number",
+      "content": "Gate 18",
+      "position": [
+        0.08,
+        0.04
+      ]
+    }
+  ],
+  "knobs": {
+    "n_entries": 5,
+    "scripts": [
+      "en",
+      "hi",
+      "regional"
+    ],
+    "perspective_deg": 3.85,
+    "blur": 0.49,
+    "noise": 0.047,
+    "lighting": 0.03,
+    "clutter": 6,
+    "occlusion": 0.086,
+    "jpeg_quality": 80,
+    "template": "board_list"
+  },
+  "closed_edges": [
+    [
+      "j_north_wing",
+      "j_atrium"
+    ]
+  ]
+}

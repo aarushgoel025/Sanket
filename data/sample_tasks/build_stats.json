@@ -1,0 +1,17 @@
+{
+  "master_seed": 42,
+  "pairs_built": 5,
+  "per_type_counts": {
+    "ABSENT": 3,
+    "BINDING": 5,
+    "CLOSURE": 3,
+    "DIRECT": 6,
+    "EGOCENTRIC": 3,
+    "OVERRIDE": 3
+  },
+  "rejected_by_reason": {
+    "imbalanced": 1
+  },
+  "total_generated": 36,
+  "total_kept": 23
+}

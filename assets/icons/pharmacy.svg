@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="currentColor">
+  <!-- Mortar & Pestle / Pharmacy -->
+  <path d="M12 24c0 8.8 6.2 16 14 16s14-7.2 14-16h-28z" fill="currentColor"/>
+  <rect x="20" y="40" width="12" height="4" rx="2" fill="currentColor"/>
+  <!-- Pestle angled -->
+  <path d="M30 8l6 3-10 17-5-3z" fill="currentColor"/>
+  <!-- Cross on bowl -->
+  <path d="M24 28h4v3h3v4h-3v3h-4v-3h-3v-4h3z" fill="#12355B"/>
+</svg>

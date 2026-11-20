@@ -1,0 +1,11 @@
+{
+  "total_generated": 30,
+  "total_kept": 24,
+  "total_rejected": 6,
+  "rejection_reasons": {
+    "ambiguous_route": 2,
+    "duplicate": 2,
+    "blind_test_fail": 1,
+    "imbalanced": 1
+  }
+}

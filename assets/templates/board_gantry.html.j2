@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('{{ font_noto_sans }}') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('{{ font_noto_sans_bold }}') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Noto Sans Devanagari';
+  src: url('{{ font_noto_devanagari }}') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Noto Sans Devanagari';
+  src: url('{{ font_noto_devanagari_bold }}') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 1280px;
+  height: 720px;
+  overflow: hidden;
+  background-color: #DDE2E6;
+  font-family: 'Noto Sans', 'Noto Sans Devanagari', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: {% if notice_entries %}flex-start{% else %}center{% endif %};
+  padding-top: 50px;
+  position: relative;
+  {% if notice_entries %}padding-left: 36px;{% endif %}
+}
+
+/* Overhead gantry trusses */
+.gantry-mount {
+  width: {% if notice_entries %}860px{% else %}1220px{% endif %};
+  height: 18px;
+  background: repeating-linear-gradient(90deg, #495057, #495057 15px, #6C757D 15px, #6C757D 30px);
+  border-radius: 4px;
+  margin-bottom: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+#board {
+  width: {% if notice_entries %}840px{% else %}1180px{% endif %};
+  min-height: 440px;
+  background-color: {{ board_bg | default('#2E3338') }};
+  color: #FFFFFF;
+  border: 4px solid #495057;
+  border-radius: 10px;
+  padding: 24px 32px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.45);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 10;
+}
+
+.gantry-header {
+  border-bottom: 2px solid rgba(255,255,255,0.2);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gantry-title {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.columns-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  flex: 1;
+}
+
+.gantry-entry {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255,255,255,0.07);
+  border-radius: 8px;
+  padding: 18px 14px;
+  position: relative;
+  text-align: center;
+}
+
+.arrow-container {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.arrow-svg {
+  width: 48px;
+  height: 48px;
+  display: block;
+}
+
+.label-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.dest-en {
+  font-size: 20px;
+  font-weight: bold;
+  color: #FFFFFF;
+  line-height: 1.2;
+}
+
+.dest-hi {
+  font-size: 18px;
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  color: #F8F9FA;
+  line-height: 1.2;
+}
+
+.closed-mark-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(179, 38, 30, 0.4);
+  border: 3px solid #B3261E;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+}
+
+.closed-badge {
+  background-color: #B3261E;
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 6px 14px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.notice-panel {
+  position: absolute;
+  right: 48px;
+  bottom: 24px;
+  width: 340px;
+  background-color: #F2C230;
+  color: #111111;
+  border-radius: 8px;
+  padding: 14px 18px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+  border-left: 8px solid #B78103;
+  z-index: 30;
+}
+
+.notice-header {
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid rgba(0,0,0,0.15);
+  padding-bottom: 4px;
+}
+
+.notice-body {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.synthetic-mark {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.45);
+  font-weight: bold;
+}
+
+.distractor-elem {
+  position: absolute;
+  z-index: 100;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transform: translate(-50%, -50%);
+}
+
+.distractor-ad { background: #FFF3CD; color: #856404; border: 1px solid #FFEBAA; }
+.distractor-number { background: #D1ECF1; color: #0C5460; border: 1px solid #BEE5EB; }
+.distractor-icon { background: #E2E3E5; color: #383D41; border: 1px solid #D6D8DB; }
+.distractor-text { background: #F8D7DA; color: #721C24; border: 1px solid #F5C6CB; }
+</style>
+</head>
+<body>
+
+<div class="gantry-mount"></div>
+
+<div id="board">
+  <div class="gantry-header">
+    <div class="gantry-title">{{ venue.name }} - OVERHEAD GANTRY</div>
+  </div>
+
+  <div class="columns-wrapper">
+    {% for entry in permanent_entries %}
+    <div class="gantry-entry" data-role="entry" data-dest-id="{{ entry.dest_id }}">
+      <div class="arrow-container">
+        <svg class="arrow-svg" viewBox="0 0 48 48" data-role="arrow" data-dest-id="{{ entry.dest_id }}" data-angle="{{ entry.arrow_angle }}" style="transform: rotate({{ entry.arrow_angle }}deg);">
+          <line x1="24" y1="42" x2="24" y2="10" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round"/>
+          <polyline points="12,22 24,10 36,22" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <div class="label-container" data-role="label" data-dest-id="{{ entry.dest_id }}">
+        <div class="dest-en">{{ entry.label.en }}</div>
+        {% if entry.label.hi %}
+        <div class="dest-hi">{{ entry.label.hi }}</div>
+        {% endif %}
+      </div>
+
+      {% if entry.status == 'closed' %}
+      <div class="closed-mark-container" data-role="closed_mark" data-dest-id="{{ entry.dest_id }}">
+        <div class="closed-badge">CLOSED / बंद</div>
+      </div>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="synthetic-mark">SYNTHETIC</div>
+</div>
+
+{% for notice in notice_entries %}
+<div class="notice-panel" data-role="notice" data-source="temporary_notice" data-dest-id="{{ notice.dest_id }}">
+  <div class="notice-header">TEMPORARY NOTICE / अस्थायी सूचना</div>
+  <div class="notice-body">
+    <svg class="arrow-svg" viewBox="0 0 48 48" data-role="arrow" data-dest-id="{{ notice.dest_id }}" data-angle="{{ notice.arrow_angle }}" style="transform: rotate({{ notice.arrow_angle }}deg);">
+      <line x1="24" y1="42" x2="24" y2="10" stroke="#111111" stroke-width="6" stroke-linecap="round"/>
+      <polyline points="12,22 24,10 36,22" fill="none" stroke="#111111" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="label-container" data-role="label" data-dest-id="{{ notice.dest_id }}">
+      <div class="dest-en" style="color: #111111;">{{ notice.label.en }}</div>
+      {% if notice.label.hi %}
+      <div class="dest-hi" style="color: #222222;">{{ notice.label.hi }}</div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+{% for distractor in distractors %}
+<div class="distractor-elem distractor-{{ distractor.kind }}" data-role="distractor" data-distractor-id="{{ distractor.id }}" style="left: {{ distractor.position[0] * 100 }}%; top: {{ distractor.position[1] * 100 }}%;">
+  <span>{{ distractor.content }}</span>
+</div>
+{% endfor %}
+
+</body>
+</html>

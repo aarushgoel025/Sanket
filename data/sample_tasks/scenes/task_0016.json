@@ -1,0 +1,139 @@
+{
+  "scene_id": "scene_railway_station_j_exit_hall_egocentric_25789",
+  "venue_id": "railway_station",
+  "junction_id": "j_exit_hall",
+  "heading": 135,
+  "entries": [
+    {
+      "dest_id": "d_p4",
+      "label": {
+        "en": "Platform 4",
+        "hi": null,
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 135,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_p1",
+      "label": {
+        "en": "Platform 1",
+        "hi": null,
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 135,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_p3",
+      "label": {
+        "en": "Platform 3",
+        "hi": null,
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 135,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_ticket",
+      "label": {
+        "en": "Ticket Counter",
+        "hi": null,
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 135,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_waiting",
+      "label": {
+        "en": "Waiting Hall",
+        "hi": null,
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 135,
+      "status": "open",
+      "source": "permanent"
+    }
+  ],
+  "distractors": [
+    {
+      "id": "distractor_1",
+      "kind": "ad",
+      "content": "Sanket Water - 100% Pure & Safe",
+      "position": [
+        0.94,
+        0.92
+      ]
+    },
+    {
+      "id": "distractor_2",
+      "kind": "text",
+      "content": "Do not lean against glass",
+      "position": [
+        0.84,
+        0.92
+      ]
+    },
+    {
+      "id": "distractor_3",
+      "kind": "text",
+      "content": "Luggage inspection mandatory",
+      "position": [
+        0.1,
+        0.92
+      ]
+    },
+    {
+      "id": "distractor_4",
+      "kind": "number",
+      "content": "Bay 07",
+      "position": [
+        0.72,
+        0.92
+      ]
+    },
+    {
+      "id": "distractor_5",
+      "kind": "number",
+      "content": "Terminal 2",
+      "position": [
+        0.35,
+        0.92
+      ]
+    },
+    {
+      "id": "distractor_6",
+      "kind": "text",
+      "content": "Silence zone",
+      "position": [
+        0.48,
+        0.92
+      ]
+    }
+  ],
+  "knobs": {
+    "n_entries": 5,
+    "scripts": [
+      "en"
+    ],
+    "perspective_deg": 0.45,
+    "blur": 0.93,
+    "noise": 0.0515,
+    "lighting": 0.21,
+    "clutter": 6,
+    "occlusion": 0.147,
+    "jpeg_quality": 65,
+    "template": "board_gantry"
+  },
+  "closed_edges": []
+}

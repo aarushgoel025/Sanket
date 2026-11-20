@@ -1,0 +1,151 @@
+{
+  "scene_id": "scene_railway_station_j_fob_egocentric_19406",
+  "venue_id": "railway_station",
+  "junction_id": "j_fob",
+  "heading": 45,
+  "entries": [
+    {
+      "dest_id": "d_ticket",
+      "label": {
+        "en": "Ticket Counter",
+        "hi": null,
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 135,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_exit",
+      "label": {
+        "en": "Main Exit",
+        "hi": null,
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 135,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_p4",
+      "label": {
+        "en": "Platform 4",
+        "hi": null,
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 0,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_p1",
+      "label": {
+        "en": "Platform 1",
+        "hi": null,
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 225,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_lift",
+      "label": {
+        "en": "Lift",
+        "hi": null,
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 135,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_p3",
+      "label": {
+        "en": "Platform 3",
+        "hi": null,
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 315,
+      "status": "open",
+      "source": "permanent"
+    }
+  ],
+  "distractors": [
+    {
+      "id": "distractor_1",
+      "kind": "text",
+      "content": "Luggage inspection mandatory",
+      "position": [
+        0.44,
+        0.04
+      ]
+    },
+    {
+      "id": "distractor_2",
+      "kind": "icon",
+      "content": "fire_extinguisher",
+      "position": [
+        0.8,
+        0.04
+      ]
+    },
+    {
+      "id": "distractor_3",
+      "kind": "icon",
+      "content": "cctv_in_operation",
+      "position": [
+        0.68,
+        0.04
+      ]
+    },
+    {
+      "id": "distractor_4",
+      "kind": "ad",
+      "content": "Kashi Souvenirs & Book Depot",
+      "position": [
+        0.92,
+        0.04
+      ]
+    },
+    {
+      "id": "distractor_5",
+      "kind": "ad",
+      "content": "Sanket Water - 100% Pure & Safe",
+      "position": [
+        0.32,
+        0.04
+      ]
+    },
+    {
+      "id": "distractor_6",
+      "kind": "ad",
+      "content": "Sanket Water - 100% Pure & Safe",
+      "position": [
+        0.56,
+        0.04
+      ]
+    }
+  ],
+  "knobs": {
+    "n_entries": 6,
+    "scripts": [
+      "en"
+    ],
+    "perspective_deg": 22.84,
+    "blur": 0.81,
+    "noise": 0.0033,
+    "lighting": 0.07,
+    "clutter": 6,
+    "occlusion": 0.037,
+    "jpeg_quality": 88,
+    "template": "board_list"
+  },
+  "closed_edges": []
+}

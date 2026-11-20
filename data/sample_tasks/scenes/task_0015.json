@@ -1,0 +1,65 @@
+{
+  "scene_id": "scene_hospital_j_corridor_west_override_16951",
+  "venue_id": "hospital",
+  "junction_id": "j_corridor_west",
+  "heading": 45,
+  "entries": [
+    {
+      "dest_id": "d_opd",
+      "label": {
+        "en": "OPD",
+        "hi": null,
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 270,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_lift",
+      "label": {
+        "en": "Lift",
+        "hi": null,
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 45,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_lift",
+      "label": {
+        "en": "Lift",
+        "hi": null,
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 0,
+      "status": "open",
+      "source": "temporary_notice"
+    }
+  ],
+  "distractors": [],
+  "knobs": {
+    "n_entries": 2,
+    "scripts": [
+      "en"
+    ],
+    "perspective_deg": 24.99,
+    "blur": 1.22,
+    "noise": 0.0021,
+    "lighting": 0.15,
+    "clutter": 0,
+    "occlusion": 0.083,
+    "jpeg_quality": 76,
+    "template": "board_list"
+  },
+  "closed_edges": [
+    [
+      "j_atrium",
+      "j_corridor_east"
+    ]
+  ]
+}

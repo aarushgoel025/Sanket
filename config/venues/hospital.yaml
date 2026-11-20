@@ -1,0 +1,183 @@
+id: hospital
+name: "City General Hospital"
+kind: hospital
+
+nodes:
+  # Junctions (at least 3)
+  - id: j_atrium
+    kind: junction
+    label:
+      en: "Central Atrium"
+      hi: "केंद्रीय आलिंद" # VERIFY HINDI
+
+  - id: j_corridor_west
+    kind: junction
+    label:
+      en: "West Wing Corridor"
+      hi: "पश्चिमी विंग गलियारा" # VERIFY HINDI
+
+  - id: j_corridor_east
+    kind: junction
+    label:
+      en: "East Wing Corridor"
+      hi: "पूर्वी विंग गलियारा" # VERIFY HINDI
+
+  - id: j_north_wing
+    kind: junction
+    label:
+      en: "Diagnostic Wing Hub"
+      hi: "जांच विंग केंद्र" # VERIFY HINDI
+
+  # Destinations (at least 9)
+  - id: d_emergency
+    kind: destination
+    category: critical
+    label:
+      en: "Emergency"
+      hi: "आपातकालीन" # VERIFY HINDI
+
+  - id: d_pharmacy
+    kind: destination
+    category: service
+    label:
+      en: "Pharmacy"
+      hi: "दवाखाना" # VERIFY HINDI
+
+  - id: d_opd
+    kind: destination
+    category: clinical
+    label:
+      en: "OPD"
+      hi: "बाह्य रोगी विभाग" # VERIFY HINDI
+
+  - id: d_radiology
+    kind: destination
+    category: diagnostic
+    label:
+      en: "Radiology"
+      hi: "रेडियोलॉजी" # VERIFY HINDI
+
+  - id: d_lab
+    kind: destination
+    category: diagnostic
+    label:
+      en: "Pathology Lab"
+      hi: "जांच प्रयोगशाला" # VERIFY HINDI
+
+  - id: d_reception
+    kind: destination
+    category: service
+    label:
+      en: "Reception"
+      hi: "स्वागत कक्ष" # VERIFY HINDI
+
+  - id: d_canteen
+    kind: destination
+    category: amenity
+    label:
+      en: "Canteen"
+      hi: "कैंटीन" # VERIFY HINDI
+
+  - id: d_lift
+    kind: destination
+    category: accessibility
+    label:
+      en: "Lift"
+      hi: "लिफ्ट"
+
+  - id: d_exit
+    kind: destination
+    category: exit
+    label:
+      en: "Main Exit"
+      hi: "निकास"
+
+edges:
+  # Inter-junction circulation network (enables OVERRIDE tasks)
+  - a: j_atrium
+    b: j_corridor_west
+    bearing_ab: 270
+    length: 30.0
+    status: open
+
+  - a: j_atrium
+    b: j_corridor_east
+    bearing_ab: 90
+    length: 36.0
+    status: open
+
+  - a: j_atrium
+    b: j_north_wing
+    bearing_ab: 0
+    length: 42.0
+    status: open
+
+  - a: j_corridor_west
+    b: j_north_wing
+    bearing_ab: 45
+    length: 48.0
+    status: open
+
+  - a: j_corridor_east
+    b: j_north_wing
+    bearing_ab: 315
+    length: 54.0
+    status: open
+
+  # Atrium spurs (reception and pharmacy are single-route spurs for CLOSURE)
+  - a: j_atrium
+    b: d_reception
+    bearing_ab: 180
+    length: 12.0
+    status: open
+
+  - a: j_atrium
+    b: d_exit
+    bearing_ab: 225
+    length: 20.0
+    status: open
+
+  - a: j_atrium
+    b: d_pharmacy
+    bearing_ab: 135
+    length: 18.0
+    status: open
+
+  # West wing spurs (emergency is single-route spur for CLOSURE)
+  - a: j_corridor_west
+    b: d_emergency
+    bearing_ab: 270
+    length: 22.0
+    status: open
+
+  - a: j_corridor_west
+    b: d_opd
+    bearing_ab: 315
+    length: 28.0
+    status: open
+
+  # East wing spurs (canteen is single-route spur for CLOSURE)
+  - a: j_corridor_east
+    b: d_canteen
+    bearing_ab: 90
+    length: 25.0
+    status: open
+
+  - a: j_corridor_east
+    b: d_lift
+    bearing_ab: 45
+    length: 15.0
+    status: open
+
+  # Diagnostic wing spurs
+  - a: j_north_wing
+    b: d_radiology
+    bearing_ab: 0
+    length: 30.0
+    status: open
+
+  - a: j_north_wing
+    b: d_lab
+    bearing_ab: 315
+    length: 24.0
+    status: open

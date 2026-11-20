@@ -1,0 +1,101 @@
+{
+  "scene_id": "scene_railway_station_j_exit_hall_egocentric_60776",
+  "venue_id": "railway_station",
+  "junction_id": "j_exit_hall",
+  "heading": 90,
+  "entries": [
+    {
+      "dest_id": "d_toilets",
+      "label": {
+        "en": "Toilets",
+        "hi": "शौचालय",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 180,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_p3",
+      "label": {
+        "en": "Platform 3",
+        "hi": "प्लेटफ़ॉर्म 3",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 180,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_p4",
+      "label": {
+        "en": "Platform 4",
+        "hi": "प्लेटफ़ॉर्म 4",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 180,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_p6",
+      "label": {
+        "en": "Platform 6",
+        "hi": "प्लेटफ़ॉर्म 6",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 270,
+      "status": "open",
+      "source": "permanent"
+    }
+  ],
+  "distractors": [
+    {
+      "id": "distractor_1",
+      "kind": "text",
+      "content": "Authorized personnel only",
+      "position": [
+        0.22,
+        0.92
+      ]
+    },
+    {
+      "id": "distractor_2",
+      "kind": "icon",
+      "content": "cctv_in_operation",
+      "position": [
+        0.72,
+        0.92
+      ]
+    },
+    {
+      "id": "distractor_3",
+      "kind": "number",
+      "content": "Bay 07",
+      "position": [
+        0.1,
+        0.92
+      ]
+    }
+  ],
+  "knobs": {
+    "n_entries": 4,
+    "scripts": [
+      "en",
+      "hi"
+    ],
+    "perspective_deg": 13.62,
+    "blur": 0.84,
+    "noise": 0.0216,
+    "lighting": 0.27,
+    "clutter": 3,
+    "occlusion": 0.071,
+    "jpeg_quality": 77,
+    "template": "board_gantry"
+  },
+  "closed_edges": []
+}

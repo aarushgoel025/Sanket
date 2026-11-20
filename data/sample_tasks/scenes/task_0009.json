@@ -1,0 +1,91 @@
+{
+  "scene_id": "scene_hospital_j_atrium_override_76226",
+  "venue_id": "hospital",
+  "junction_id": "j_atrium",
+  "heading": 90,
+  "entries": [
+    {
+      "dest_id": "d_emergency",
+      "label": {
+        "en": "Emergency",
+        "hi": "आपातकालीन",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 180,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_lift",
+      "label": {
+        "en": "Lift",
+        "hi": "लिफ्ट",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 270,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_lab",
+      "label": {
+        "en": "Pathology Lab",
+        "hi": "जांच प्रयोगशाला",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 270,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_canteen",
+      "label": {
+        "en": "Canteen",
+        "hi": "कैंटीन",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 0,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_canteen",
+      "label": {
+        "en": "Canteen",
+        "hi": "कैंटीन",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 270,
+      "status": "open",
+      "source": "temporary_notice"
+    }
+  ],
+  "distractors": [],
+  "knobs": {
+    "n_entries": 4,
+    "scripts": [
+      "en",
+      "hi",
+      "regional"
+    ],
+    "perspective_deg": 9.14,
+    "blur": 0.12,
+    "noise": 0.0443,
+    "lighting": 0.23,
+    "clutter": 0,
+    "occlusion": 0.084,
+    "jpeg_quality": 71,
+    "template": "board_list"
+  },
+  "closed_edges": [
+    [
+      "j_atrium",
+      "j_corridor_east"
+    ]
+  ]
+}

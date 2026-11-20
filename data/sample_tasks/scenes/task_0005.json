@@ -1,0 +1,114 @@
+{
+  "scene_id": "scene_hospital_j_corridor_west_absent_43397",
+  "venue_id": "hospital",
+  "junction_id": "j_corridor_west",
+  "heading": 90,
+  "entries": [
+    {
+      "dest_id": "d_emergency",
+      "label": {
+        "en": "Emergency",
+        "hi": "आपातकालीन",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 180,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_lab",
+      "label": {
+        "en": "Pathology Lab",
+        "hi": "जांच प्रयोगशाला",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 315,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_opd",
+      "label": {
+        "en": "OPD",
+        "hi": "बाह्य रोगी विभाग",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 225,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_reception",
+      "label": {
+        "en": "Reception",
+        "hi": "स्वागत कक्ष",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 0,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_radiology",
+      "label": {
+        "en": "Radiology",
+        "hi": "रेडियोलॉजी",
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 315,
+      "status": "open",
+      "source": "permanent"
+    }
+  ],
+  "distractors": [
+    {
+      "id": "distractor_1",
+      "kind": "text",
+      "content": "Silence zone",
+      "position": [
+        0.92,
+        0.04
+      ]
+    },
+    {
+      "id": "distractor_2",
+      "kind": "icon",
+      "content": "escalator",
+      "position": [
+        0.32,
+        0.04
+      ]
+    },
+    {
+      "id": "distractor_3",
+      "kind": "icon",
+      "content": "first_aid",
+      "position": [
+        0.2,
+        0.04
+      ]
+    }
+  ],
+  "knobs": {
+    "n_entries": 5,
+    "scripts": [
+      "en",
+      "hi",
+      "regional"
+    ],
+    "perspective_deg": 11.5,
+    "blur": 0.31,
+    "noise": 0.0122,
+    "lighting": 0.14,
+    "clutter": 3,
+    "occlusion": 0.134,
+    "jpeg_quality": 61,
+    "template": "board_list"
+  },
+  "closed_edges": []
+}

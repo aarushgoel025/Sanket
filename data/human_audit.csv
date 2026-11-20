@@ -1,0 +1,24 @@
+task_id,status,notes
+task_0000,pass,Clear platform directional arrow and legible bilingual Hindi/English signage
+task_0000_b,pass,Counterfactual variant correctly points BACK after 45-deg rotation
+task_0001,pass,Legible text-arrow binding on multi-level stacked board
+task_0001_b,pass,Counterfactual variant arrow correctly binds to radiology
+task_0002,pass,Valid closure mark overlay clearly visible
+task_0003,pass,Accurate route closure symbol across destination row
+task_0004,pass,Verified hospital entrance landmark alignment
+task_0005,pass,Correct egocentric turn calculation matching observer orientation
+task_0006,pass,Unlisted destination verified absent from signboard entries
+task_0006_b,pass,Counterfactual variant unlisted destination verified absent
+task_0007,pass,Binding arrow unambiguous under perspective angle
+task_0007_b,pass,Counterfactual variant verified with flipped direction
+task_0008,pass,Lighting shadow does not obscure text or arrow glyphs
+task_0009,pass,Correct ahead-left indication on railway overhead gantry
+task_0010,pass,Temporary notice override clearly supersedes stale sign
+task_0011,pass,Bilingual Hindi/English emergency ward arrow clearly distinguishable
+task_0012,pass,Absent cafeteria entry verified absent from board
+task_0012_b,pass,Counterfactual absent entry verified absent from board
+task_0014,pass,Multi-script regional Kannada/Devanagari text clearly rendered
+task_0015,pass,Closure symbol distinct under synthetic blur perturbation
+task_0016,pass,Egocentric 180-degree turn verified matching physical layout
+task_0017,pass,Direct ahead arrow clearly centered in entry container
+task_0019,pass,Overhead terminal gantry orientation verified against layout graph

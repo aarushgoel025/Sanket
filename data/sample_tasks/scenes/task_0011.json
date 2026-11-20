@@ -1,0 +1,120 @@
+{
+  "scene_id": "scene_hospital_j_corridor_west_absent_79488",
+  "venue_id": "hospital",
+  "junction_id": "j_corridor_west",
+  "heading": 180,
+  "entries": [
+    {
+      "dest_id": "d_opd",
+      "label": {
+        "en": "OPD",
+        "hi": null,
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 135,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_lift",
+      "label": {
+        "en": "Lift",
+        "hi": null,
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 270,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_exit",
+      "label": {
+        "en": "Main Exit",
+        "hi": null,
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 270,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_lab",
+      "label": {
+        "en": "Pathology Lab",
+        "hi": null,
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 225,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_radiology",
+      "label": {
+        "en": "Radiology",
+        "hi": null,
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 225,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_emergency",
+      "label": {
+        "en": "Emergency",
+        "hi": null,
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 90,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_reception",
+      "label": {
+        "en": "Reception",
+        "hi": null,
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 270,
+      "status": "open",
+      "source": "permanent"
+    },
+    {
+      "dest_id": "d_pharmacy",
+      "label": {
+        "en": "Pharmacy",
+        "hi": null,
+        "regional": null,
+        "regional_script": null
+      },
+      "arrow_angle": 270,
+      "status": "open",
+      "source": "permanent"
+    }
+  ],
+  "distractors": [],
+  "knobs": {
+    "n_entries": 8,
+    "scripts": [
+      "en"
+    ],
+    "perspective_deg": 20.46,
+    "blur": 0.2,
+    "noise": 0.0038,
+    "lighting": 0.24,
+    "clutter": 0,
+    "occlusion": 0.081,
+    "jpeg_quality": 78,
+    "template": "board_list"
+  },
+  "closed_edges": []
+}
