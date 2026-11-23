@@ -133,3 +133,73 @@ def test_demo_pages_syntax_and_import() -> None:
         source = page_path.read_text(encoding="utf-8")
         compiled = compile(source, str(page_path), "exec")
         assert compiled is not None
+
+
+def test_fastapi_endpoints() -> None:
+    """Verify FastAPI backend endpoints return expected schemas and 200 status."""
+    from fastapi.testclient import TestClient
+
+    from sanket.api.main import app
+
+    client = TestClient(app)
+
+    # Health check
+    res_health = client.get("/api/health")
+    assert res_health.status_code == 200
+    assert res_health.json()["status"] == "ok"
+
+    # Tasks list
+    res_tasks = client.get("/api/tasks")
+    assert res_tasks.status_code == 200
+    tasks = res_tasks.json()
+    assert len(tasks) > 0
+
+    first_task = tasks[0]
+    task_id = first_task["task_id"]
+
+    # Single task
+    res_task = client.get(f"/api/tasks/{task_id}")
+    assert res_task.status_code == 200
+    assert res_task.json()["task_id"] == task_id
+
+    # Venues list
+    res_venues = client.get("/api/venues")
+    assert res_venues.status_code == 200
+    assert len(res_venues.json()) > 0
+
+    # Venue graph coordinates
+    venue_id = res_venues.json()[0]["id"]
+    res_graph = client.get(f"/api/venues/{venue_id}/graph")
+    assert res_graph.status_code == 200
+    graph_data = res_graph.json()
+    assert "nodes" in graph_data
+    assert "edges" in graph_data
+
+    # Pairs
+    res_pairs = client.get("/api/pairs")
+    assert res_pairs.status_code == 200
+    assert len(res_pairs.json()) > 0
+
+    # Findings
+    res_findings = client.get("/api/findings")
+    assert res_findings.status_code == 200
+    assert "figures" in res_findings.json()
+
+    # Failures
+    res_failures = client.get("/api/failures")
+    assert res_failures.status_code == 200
+    assert len(res_failures.json()) > 0
+
+    # Ask endpoint with Oracle
+    res_ask = client.post(
+        "/api/ask",
+        json={"task_id": task_id, "model_name": "oracle", "mode": "image"},
+    )
+    assert res_ask.status_code == 200
+    ask_data = res_ask.json()
+    assert ask_data["is_correct"] is True
+    assert ask_data["model_answer"] == first_task["gold"]
+
+    # Root serves HTML
+    res_root = client.get("/")
+    assert res_root.status_code == 200

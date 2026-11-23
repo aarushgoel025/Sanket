@@ -1,3 +1,12 @@
+# Stage 1: Build React + Vite frontend
+FROM node:20-slim AS frontend-builder
+WORKDIR /build
+COPY frontend/package*.json ./
+RUN npm install
+COPY frontend/ ./
+RUN npm run build
+
+# Stage 2: Runtime Python container
 FROM python:3.11-slim
 
 WORKDIR /app
@@ -42,6 +51,9 @@ RUN fc-cache -f -v
 
 # Copy full application source
 COPY . .
+
+# Copy compiled frontend from builder stage
+COPY --from=frontend-builder /build/dist /app/frontend/dist
 
 EXPOSE 8501
 
