@@ -35,6 +35,11 @@ export const Playground: React.FC<PlaygroundProps> = ({ tasks, venues, onTasksUp
 
   // Bounding box toggle
   const [showBoxes, setShowBoxes] = useState<boolean>(false);
+  const [imageError, setImageError] = useState<boolean>(false);
+
+  useEffect(() => {
+    setImageError(false);
+  }, [selectedTaskId]);
 
   const QUESTION_TYPES = ["All", "DIRECT", "BINDING", "CLOSURE", "OVERRIDE", "EGOCENTRIC", "ABSENT"];
 
@@ -352,11 +357,29 @@ export const Playground: React.FC<PlaygroundProps> = ({ tasks, venues, onTasksUp
 
               {/* Image preview */}
               <div className="relative p-3 bg-slate-900/90 flex justify-center items-center min-h-[320px]">
-                <img
-                  src={currentTask.image_url}
-                  alt={`Signboard for task ${currentTask.task_id}`}
-                  className="max-h-[420px] w-auto object-contain rounded shadow-md"
-                />
+                {!imageError ? (
+                  <img
+                    key={currentTask.image_url}
+                    src={currentTask.image_url}
+                    alt={`Signboard for task ${currentTask.task_id}`}
+                    onError={() => setImageError(true)}
+                    className="max-h-[420px] w-auto object-contain rounded shadow-md"
+                  />
+                ) : (
+                  <div className="flex flex-col items-center justify-center p-8 text-center text-slate-300">
+                    <RefreshCw className="w-8 h-8 text-amber-400 mb-2" />
+                    <p className="text-sm font-semibold text-white">Signboard Image Rendering / Reloading</p>
+                    <p className="text-xs text-slate-400 mt-1 max-w-sm">
+                      Resource: <code className="font-mono text-emerald-400">{currentTask.image_url}</code>
+                    </p>
+                    <button
+                      onClick={() => setImageError(false)}
+                      className="mt-3 text-xs px-3 py-1.5 rounded bg-emerald-800 text-white hover:bg-emerald-700 transition-colors"
+                    >
+                      Retry Loading Image
+                    </button>
+                  </div>
+                )}
 
                 {/* Optional overlay indicator */}
                 {showBoxes && currentTask.scene?.entries && (
@@ -428,7 +451,7 @@ export const Playground: React.FC<PlaygroundProps> = ({ tasks, venues, onTasksUp
             {/* Interactive SVG Venue Route Map */}
             <VenueMapSVG
               venueId={currentTask.scene?.venue_id || "railway_station"}
-              junctionId={currentTask.scene?.junction_id || "j_main"}
+              junctionId={currentTask.scene?.junction_id || "j_concourse"}
               targetDestId={currentTask.target_dest_id}
               closedEdges={currentTask.scene?.closed_edges || []}
               taskId={currentTask.task_id}

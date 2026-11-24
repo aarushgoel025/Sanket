@@ -200,22 +200,24 @@ def get_venue_graph_data(venue_id: str) -> dict[str, Any]:
 def _resolve_task_image_url(task: Task) -> str:
     """Map local file path to accessible static URL."""
     p_str = str(task.image_path).replace("\\", "/")
-    if "sample_tasks/images/" in p_str:
-        filename = Path(p_str).name
+    filename = Path(p_str).name
+    if "sample_tasks/images/" in p_str or (sample_img_dir / filename).exists():
         return f"/static/sample_images/{filename}"
     elif "real_photos/images/" in p_str or "images/R" in p_str:
-        filename = Path(p_str).name
         return f"/static/real_images/{filename}"
-    elif "generated/images/" in p_str:
-        filename = Path(p_str).name
+    elif "generated/images/" in p_str or (GENERATED_IMAGES_DIR / filename).exists():
         return f"/static/generated_images/{filename}"
-    return f"/static/sample_images/{Path(p_str).name}"
+    return f"/static/sample_images/{filename}"
 
 
 def _task_to_dict(task: Task) -> dict[str, Any]:
-    """Serialize task with resolved URLs and receipts."""
+    """Serialize task with resolved URLs, scenes, and receipts."""
     data = task.model_dump()
     data["image_url"] = _resolve_task_image_url(task)
+    if task.scene_path:
+        scene = load_scene(task.scene_path)
+        if scene:
+            data["scene"] = scene.model_dump()
     return data
 
 

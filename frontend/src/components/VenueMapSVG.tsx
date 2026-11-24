@@ -1,64 +1,100 @@
 import { useEffect, useState } from "react";
 import type { GraphNode, VenueGraphData } from "../types";
-import { Navigation, Eye } from "lucide-react";
+import { Navigation, Eye, RefreshCw, AlertCircle } from "lucide-react";
 
 interface VenueMapSVGProps {
-  venueId: string;
-  junctionId: string;
+  venueId?: string;
+  junctionId?: string;
   targetDestId: string;
   closedEdges?: [string, string][];
   taskId?: string;
 }
 
+// In-memory cache for venue graph data to prevent redundant fetches
+const venueCache: Record<string, VenueGraphData> = {};
+
 export const VenueMapSVG: React.FC<VenueMapSVGProps> = ({
-  venueId,
+  venueId = "railway_station",
   junctionId,
   targetDestId,
   closedEdges = [],
   taskId,
 }) => {
-  const [graphData, setGraphData] = useState<VenueGraphData | null>(null);
-  const [loading, setLoading] = useState(true);
+  const safeVenueId = venueId && venueId.trim() ? venueId : "railway_station";
+  const [graphData, setGraphData] = useState<VenueGraphData | null>(venueCache[safeVenueId] || null);
+  const [loading, setLoading] = useState(!venueCache[safeVenueId]);
+  const [loadError, setLoadError] = useState<string | null>(null);
   const [viewMode, setViewMode] = useState<"svg" | "mpl">("svg");
 
-  useEffect(() => {
-    let isMounted = true;
+  const fetchGraph = (vId: string) => {
+    if (venueCache[vId]) {
+      setGraphData(venueCache[vId]);
+      setLoading(false);
+      setLoadError(null);
+      return;
+    }
+
     setLoading(true);
-    fetch(`/api/venues/${venueId}/graph`)
+    setLoadError(null);
+
+    fetch(`/api/venues/${vId}/graph`)
       .then((res) => {
-        if (!res.ok) throw new Error("Failed to load venue graph");
+        if (!res.ok) throw new Error(`HTTP error ${res.status}: Failed to load venue '${vId}'`);
         return res.json();
       })
       .then((data: VenueGraphData) => {
-        if (isMounted) {
-          setGraphData(data);
-          setLoading(false);
-        }
+        venueCache[vId] = data;
+        setGraphData(data);
+        setLoading(false);
       })
       .catch((err) => {
         console.error("Venue graph load error:", err);
-        if (isMounted) setLoading(false);
+        setLoadError(err.message || "Network error loading venue graph");
+        setLoading(false);
       });
-    return () => {
-      isMounted = false;
-    };
-  }, [venueId]);
+  };
+
+  useEffect(() => {
+    fetchGraph(safeVenueId);
+  }, [safeVenueId]);
 
   if (loading) {
     return (
       <div className="h-72 flex items-center justify-center bg-slate-50 border border-slate-200 rounded-lg">
         <div className="text-sm text-slate-500 animate-pulse flex items-center space-x-2">
           <Navigation className="w-4 h-4 animate-spin text-emerald-700" />
-          <span>Computing topological graph layout...</span>
+          <span>Loading venue topology ({safeVenueId})...</span>
         </div>
       </div>
     );
   }
 
-  if (!graphData) {
+  if (loadError || !graphData) {
     return (
-      <div className="h-72 flex items-center justify-center bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-500">
-        Venue graph data unavailable.
+      <div className="h-72 flex flex-col items-center justify-center bg-slate-50 border border-slate-200 rounded-lg p-4 text-center">
+        <AlertCircle className="w-6 h-6 text-amber-600 mb-2" />
+        <p className="text-xs text-slate-700 font-semibold mb-1">
+          Venue Topology Unavailable ({safeVenueId})
+        </p>
+        <p className="text-[11px] text-slate-500 mb-3 max-w-xs">{loadError || "Unable to reach graph API"}</p>
+        <div className="flex space-x-2">
+          <button
+            onClick={() => fetchGraph(safeVenueId)}
+            className="text-xs px-3 py-1.5 rounded bg-emerald-900 text-white font-medium hover:bg-emerald-800 transition-colors flex items-center space-x-1"
+          >
+            <RefreshCw className="w-3 h-3" />
+            <span>Retry Loading Graph</span>
+          </button>
+          {taskId && (
+            <button
+              onClick={() => setViewMode("mpl")}
+              className="text-xs px-3 py-1.5 rounded bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 transition-colors flex items-center space-x-1"
+            >
+              <Eye className="w-3 h-3" />
+              <span>Use Matplotlib View</span>
+            </button>
+          )}
+        </div>
       </div>
     );
   }
@@ -67,16 +103,22 @@ export const VenueMapSVG: React.FC<VenueMapSVGProps> = ({
   const nodeMap = new Map<string, GraphNode>();
   graphData.nodes.forEach((n) => nodeMap.set(n.id, n));
 
+  // Determine effective observer junction: fallback to first junction if not specified or not in graph
+  const effectiveJunction =
+    junctionId && nodeMap.has(junctionId)
+      ? junctionId
+      : graphData.nodes.find((n) => n.kind === "junction")?.id || graphData.nodes[0]?.id || "";
+
+  const isTargetInGraph = nodeMap.has(targetDestId);
+
   // Determine closed edge set (bidirectional)
   const isClosedEdge = (u: string, v: string) => {
-    return closedEdges.some(
-      ([a, b]) => (a === u && b === v) || (a === v && b === u)
-    );
+    return closedEdges.some(([a, b]) => (a === u && b === v) || (a === v && b === u));
   };
 
-  // Simple Breadth-First Shortest Path on non-closed edges
+  // Breadth-First Shortest Path on non-closed edges
   const findPath = (start: string, end: string): string[] => {
-    if (!start || !end || start === end) return [start];
+    if (!start || !end || !nodeMap.has(start) || !nodeMap.has(end) || start === end) return [start];
     const queue: [string, string[]][] = [[start, [start]]];
     const visited = new Set<string>([start]);
 
@@ -98,14 +140,13 @@ export const VenueMapSVG: React.FC<VenueMapSVGProps> = ({
     return [];
   };
 
-  const routePath = findPath(junctionId, targetDestId);
+  const routePath = isTargetInGraph ? findPath(effectiveJunction, targetDestId) : [];
   const routeEdges = new Set<string>();
   for (let i = 0; i < routePath.length - 1; i++) {
     routeEdges.add(`${routePath[i]}->${routePath[i + 1]}`);
   }
 
-  const firstHopKey =
-    routePath.length >= 2 ? `${routePath[0]}->${routePath[1]}` : null;
+  const firstHopKey = routePath.length >= 2 ? `${routePath[0]}->${routePath[1]}` : null;
 
   return (
     <div className="bg-white border border-slate-200 rounded-lg overflow-hidden shadow-xs">
@@ -221,7 +262,7 @@ export const VenueMapSVG: React.FC<VenueMapSVGProps> = ({
 
             {/* Nodes */}
             {graphData.nodes.map((node) => {
-              const isObserver = node.id === junctionId;
+              const isObserver = node.id === effectiveJunction;
               const isTarget = node.id === targetDestId;
               const isJunction = node.kind === "junction";
 
@@ -292,16 +333,30 @@ export const VenueMapSVG: React.FC<VenueMapSVGProps> = ({
             })}
           </svg>
 
+          {/* Target absent alert for ABSENT question type */}
+          {!isTargetInGraph && (
+            <div className="my-2 p-2 rounded bg-amber-50 border border-amber-200 text-xs text-amber-900 flex items-center justify-between">
+              <span>
+                <strong>ABSENT Question Type:</strong> Destination <code className="font-mono">{targetDestId}</code> is
+                unlisted on the sign.
+              </span>
+              <span className="font-semibold text-emerald-800">Gold: NOT_INDICATED</span>
+            </div>
+          )}
+
           {/* Legend */}
           <div className="mt-2 pt-2 border-t border-slate-200/80 flex flex-wrap items-center justify-between text-xs text-slate-600 px-2 gap-y-1">
             <div className="flex items-center space-x-4">
               <span className="flex items-center">
                 <span className="w-3 h-3 rounded-full bg-amber-500 mr-1.5 border border-slate-800"></span>
-                Observer at <code className="ml-1 font-mono text-[11px]">{junctionId}</code>
+                Observer at <code className="ml-1 font-mono text-[11px]">{effectiveJunction}</code>
               </span>
               <span className="flex items-center">
                 <span className="w-3 h-3 rounded-full bg-emerald-500 mr-1.5 border border-slate-800"></span>
-                Target: <code className="ml-1 font-mono text-[11px]">{targetDestId}</code>
+                Target:{" "}
+                <code className="ml-1 font-mono text-[11px]">
+                  {isTargetInGraph ? targetDestId : `${targetDestId} (Unlisted)`}
+                </code>
               </span>
             </div>
             <div className="flex items-center space-x-4">
